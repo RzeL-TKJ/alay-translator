@@ -40,7 +40,7 @@ function encrypt() {
                 };
 				
             } else {
-				output = output+decode[b];
+		output = output+decode[b];
             };
             
         };
@@ -50,8 +50,8 @@ function encrypt() {
 };
 
 function decrypt() {
-    var main   = "abgsezi";
-    var decode = "4695321";
+    var main   = "4695321";
+    var decode = "abgsezi";
 
     main = main.split("");
     decode = decode.split("");
@@ -66,12 +66,12 @@ function decrypt() {
     var a;
 
     for (x of input) {
-        var b = decode.indexOf(x);
+        var b = main.indexOf(x);
         
         if (b == -1) {
             output = output+x;
         } else {
-            output = output+main[b];
+            output = output+decode[b];
         };
     };
 
